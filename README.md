@@ -15,14 +15,15 @@ With seamless Google Sign-In integration, logging in is secure and quick. Entrie
 
     Flutter: Build cross-platform apps with a native-like experience.
     Google Sign-In: Secure and simple user authentication.
-    Firebase or Supabase: For backend management (authentication and data storage).
+    Supabase: For backend management (authentication and data storage).
 
 🚀 Setup & Installation
 
 To get started with the My Day Diary app, follow these simple steps:
 
     Clone the repository:
-https://github.com/zwubishet/My_day_diary_app.git
+
+git clone https://github.com/zwubishet/my-day-diary.git
 
 Install dependencies:
 
@@ -37,10 +38,7 @@ Run the app:
     Flutter 3.x or later
     Google Cloud Project: With OAuth credentials for Google Sign-In.
     Firebase or Supabase: For user authentication and database management.
-
-📜 License
-
-This project is licensed under the MIT License.
+    
 🌟 Contribute
 
 Feel free to fork this project and submit Pull Requests to improve the app. Contributions are always welcome! ✨
