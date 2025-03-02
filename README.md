@@ -22,8 +22,7 @@ With seamless Google Sign-In integration, logging in is secure and quick. Entrie
 To get started with the My Day Diary app, follow these simple steps:
 
     Clone the repository:
-
-git clone https://github.com/your-username/my-day-diary.git
+https://github.com/zwubishet/My_day_diary_app.git
 
 Install dependencies:
 
