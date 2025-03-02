@@ -23,7 +23,7 @@ To get started with the My Day Diary app, follow these simple steps:
 
     Clone the repository:
 
-git clone https://github.com/zwubishet/my-day-diary.git
+git clone https://github.com/zwubishet/My_day_diary_app.git
 
 Install dependencies:
 
