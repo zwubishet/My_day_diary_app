@@ -10,8 +10,16 @@ class ThemeModes {
       onSecondary: Colors.black,
       error: Colors.red,
       onError: Colors.black,
-      surface: Color(0xffcaf0f8),
+      surface: const Color(0xffcaf0f8),
       onSurface: Colors.black87,
+    ),
+    cardTheme: CardTheme(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    ),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      bodyMedium: TextStyle(fontSize: 14),
     ),
   );
 
@@ -26,6 +34,14 @@ class ThemeModes {
       onError: Colors.white,
       surface: Colors.black,
       onSurface: Colors.white70,
+    ),
+    cardTheme: CardTheme(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    ),
+    textTheme: const TextTheme(
+      titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      bodyMedium: TextStyle(fontSize: 14),
     ),
   );
 }

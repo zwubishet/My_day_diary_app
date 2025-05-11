@@ -6,14 +6,27 @@ import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
-  await Supabase.initialize(
-    url: 'https://hilkusrmkszlkttwgpso.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpbGt1c3Jta3N6bGt0dHdncHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1NjI0OTksImV4cCI6MjA1NjEzODQ5OX0.T9s-UiT8-FDVBD6Oy5l0icSzbD5Dmyu1rlexWgMbNaU',
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Supabase with error handling
+  try {
+    await Supabase.initialize(
+      url: 'https://hilkusrmkszlkttwgpso.supabase.co',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpbGt1c3Jta3N6bGt0dHdncHNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA1NjI0OTksImV4cCI6MjA1NjEzODQ5OX0.T9s-UiT8-FDVBD6Oy5l0icSzbD5Dmyu1rlexWgMbNaU',
+    );
+  } catch (e) {
+    debugPrint('Supabase initialization failed: $e');
+  }
+
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => ThemeProvider())],
+      providers: [
+        // Provide ThemeProvider with initial ThemeData
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(ThemeModes().lightMode),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
@@ -28,11 +41,12 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Diary App',
       theme: ThemeModes().lightMode,
       darkTheme: ThemeModes().darkMode,
-      themeMode: themeProvider.themeMode, // Corrected
+      themeMode: themeProvider.themeMode,
       home: const AuthenticationGate(),
+      routes: {'/auth': (context) => const AuthenticationGate()},
     );
   }
 }
